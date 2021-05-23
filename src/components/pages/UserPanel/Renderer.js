@@ -1,9 +1,17 @@
 import React from 'react'
 
-function Renderer() {
+/*Renderer builds dynamic data from JSON*/
+function Renderer(
+    {
+        name,
+        data
+    }
+ ) {
+   
     return (
+        
         <div>
-            Rendered Data from JSON Makumba
+            what i got:    {name}, {data}
         </div>
     )
 }

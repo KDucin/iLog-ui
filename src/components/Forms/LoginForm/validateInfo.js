@@ -18,7 +18,9 @@ export default function validateInfo(values) {
     }
 
     /*
- 
+      Status 400 ? pair username + password doesnt exist ->
+      
+      errors.username = 'Username and password do not match'
     */
     
     return errors;

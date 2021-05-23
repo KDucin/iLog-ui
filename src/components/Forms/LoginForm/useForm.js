@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 const useForm = (validate) => {
 
-    const history = useHistory();
+    const history = useHistory(); // React hook 
     const [values, setValues] = useState({
       username: '',
       password: '',
@@ -18,21 +18,23 @@ const useForm = (validate) => {
       });
     };
   
-    const handleSubmit = e => {
+    const handleSubmit = e => { // handleSubmit if no errors
       e.preventDefault();
       setErrors(validate(values));
       setIsSubmitting(true);
     };
-    
-   
+
+    /* Create redirection, <Redirect/> wont work*/
     useEffect(() => {
       if(Object.keys(errors).length === 0 && isSubmitting ) {
-        history.push('/user-panel', {name: "JSON DATA" }/*here we pass JSON to build user-panel*/)
-      }
-        
-    }, [errors])
+        /*
+          Status 200 -> JSON, pass instead {name, data} below
+        */
+       const config = {name: "json", data:"here"}
+        history.push('/user-panel', config)
+      } 
+    }, [errors]) //always return errors, even empty
   
     return { handleChange, handleSubmit, values, errors };
   };
-  
   export default useForm;

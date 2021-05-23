@@ -13,12 +13,7 @@ export default function validateInfo(values) {
       
           if() username already exists, return error ->
           errors.username = "account username already exists"
-
-
-
-    
     */
-
      // validate if email is empty or containts invalid content 
     if (!values.email) {
       errors.email = 'Email required';
@@ -28,18 +23,15 @@ export default function validateInfo(values) {
      /*
       else == not Empty and Doesnt contain invalid characters
       so try to connect te BE / DB and get response
-            if() email already exists, return error ->
+            if() email already exists status 200?, return error ->
             errors.email = "account given email already exists"
     */
-
-
     // password to short or not given
     if (!values.password) {
       errors.password = 'Password is required';
     } else if (values.password.length < 6) {
       errors.password = 'Password needs to be 6 characters or more';
     }
-    
     // password not given or doesnt match with original
     if (!values.password2) {
       errors.password2 = 'Password is required';

@@ -8,9 +8,8 @@ const UserPanel = () =>
     const location = useLocation();
     return (
         <div>
-           <p>{location.state.name}</p>
-            <Link to='/'>Back to main </Link>
-            <Renderer/>
+            <Link to='/'>Back to main </Link>          
+            <Renderer {...location.state}/> 
         </div>
     )
 }

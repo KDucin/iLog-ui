@@ -21,7 +21,7 @@ const {handleChange, handleSubmit, values, errors} = useForm(validate);
                         Username
                     </label>
                     <input 
-                        id = 'username' // mark when focued
+                        
                         type='text' 
                         name='username' 
                         className='form-input'
@@ -36,7 +36,7 @@ const {handleChange, handleSubmit, values, errors} = useForm(validate);
                        Email
                     </label>
                     <input 
-                        id = 'email' // mark when focued
+                        
                         type='email' 
                         name='email' 
                         className='form-input'
@@ -48,11 +48,11 @@ const {handleChange, handleSubmit, values, errors} = useForm(validate);
                 </div>
 
                 <div className = 'form-inputs'>
-                    <label htmlFor="password2" className='form-label'>
+                    <label htmlFor="password" className='form-label'>
                        Password
                     </label>
                     <input 
-                        id = 'password' // mark when focued
+
                         type='password' 
                         name='password' 
                         className='form-input'
@@ -64,13 +64,12 @@ const {handleChange, handleSubmit, values, errors} = useForm(validate);
                 </div>
 
                 <div className = 'form-inputs'>
-                    <label htmlFor="password" className='form-label'>
+                    <label htmlFor="password2" className='form-label'>
                        Confirm Password
                     </label>
                     <input 
-                        id = 'password2' // mark when focued
                         type='password' 
-                        name='Confirm password' 
+                        name='password2' 
                         className='form-input'
                         placeholder='Repeat your password'
                         value={values.password2}

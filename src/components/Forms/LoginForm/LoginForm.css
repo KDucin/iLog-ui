@@ -93,8 +93,9 @@
     border-radius: 2px;
     background: linear-gradient(
       90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
+      rgb(50, 80, 188) 0%,
+      rgb(51, 70, 137) 100%,
+      rgb(50, 80, 188) 0%
     );
     outline: none;
     border: none;
@@ -106,8 +107,9 @@
     cursor: pointer;
     background: linear-gradient(
       90deg,
-      rgb(39, 143, 255) 0%,
-      rgb(12, 99, 250) 100%
+      rgba(77, 73, 200, 0.99) 0%,
+      rgb(62, 137, 51) 100%,
+      
     );
     transition: all 0.4s ease-out;
   }

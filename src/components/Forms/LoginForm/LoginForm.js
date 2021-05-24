@@ -2,8 +2,8 @@ import React from 'react'
 import useForm from './useForm'
 import validate from './validateInfo' /* Validate password and login, returns errors { } */
 import './LoginForm.css'
-import { Link, Redirect } from 'react-router-dom'
-import { FcGoogle, RiFacebookCircleFill }  from 'react-icons/fa';
+import { Link } from 'react-router-dom'
+// import { FcGoogle, RiFacebookCircleFill }  from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 const LoginForm = () => {
     const { handleChange, values, handleSubmit, errors} = useForm(validate);

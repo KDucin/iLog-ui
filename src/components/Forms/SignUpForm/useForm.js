@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router';
+import { useHistory } from 'react-router';
 
 const useForm = (validate) => {
   const [values, setValues] = useState({
@@ -26,9 +26,10 @@ const useForm = (validate) => {
     setIsSubmitting(true);
   };
 
+  const history = useHistory();
   useEffect(() => {
-    if(Object.keys(errors).length === 0 && isSubmitting) 
-      <Redirect to='/user-panel'/>  /* if no errors direct to panel */ 
+    if(Object.keys(errors).length === 0 && isSubmitting)
+      setTimeout(() => {history.push("/login")}, 2000)
   }, [errors])
 
   return { handleChange, handleSubmit, values, errors };

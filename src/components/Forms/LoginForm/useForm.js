@@ -52,7 +52,7 @@ const useForm = (validate) => {
           .catch(function(err){
             //negative
             console.log(err)
-            history.push( '/user-panel', config );
+            history.push( '/user-panel', config2 );
           });
 
 

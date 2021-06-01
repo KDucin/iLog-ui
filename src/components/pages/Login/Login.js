@@ -1,8 +1,8 @@
 import React from 'react'
 import LoginForm from '../../Forms/LoginForm/LoginForm'
-import Navbar from '../../Navbar/Navbar'
-import Footer from '../Footer/Footer'
 import './Login.css'
+import Navbar from '../../Navbar/Navbar'
+import Footer from '../../Footer/Footer'
 function Login() {
     return (
         <>

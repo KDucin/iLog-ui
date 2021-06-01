@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Footer from '../../Footer/Footer';
 import SignUpForm from '../../Forms/SignUpForm/SignUpForm';
-import Navbar from '../../Navbar/Navbar'
-import Footer from '../Footer/Footer';
+import Navbar from '../../Navbar/Navbar';
+
 
 
 /*Fetch from backend
@@ -26,7 +27,7 @@ const UserProfile = () => {
 
 const SignUp = () => {
     return (
-        < >
+        <>
             <Navbar />  
             <div className='form-wrapper' >
                 <div className='form-container' style={{backgroundColor:"blue"}}> 

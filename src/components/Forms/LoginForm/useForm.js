@@ -57,7 +57,7 @@ const useForm = (validate) => {
 
 
           // /*just random file to test*/
-          //history.push( '/user-panel', config );
+          history.push('/user-panel', config );
       } 
     }, [errors]) //always return errors, even empty
   

@@ -21,7 +21,6 @@ const {handleChange, handleSubmit, values, errors} = useForm(validate);
                         Username
                     </label>
                     <input 
-                        
                         type='text' 
                         name='username' 
                         className='form-input'

@@ -7,7 +7,7 @@ const useForm = (validate) => {
 
     const history = useHistory(); // React hook 
     const [values, setValues] = useState({
-      username: '',
+      email: '',
       password: '',
     });
     const [errors, setErrors] = useState({});
@@ -32,12 +32,32 @@ const useForm = (validate) => {
       if(Object.keys(errors).length === 0 && isSubmitting ) {
        /*
           Status 200 -> JSON, pass instead {name, data} below
-          axios.get(url + '?username=' + username)
-
           FIX HERE -> handle axios POST !!!!!!
         */ 
-        const config = require('./config12.json'); /*just random file to test*/
-          history.push( '/user-panel', config )
+          const config = require('./config.json');
+          const config2 = require('./config12.json');
+          axios.get('http://localhost:8080/api/user',
+          {
+            email: values.email,
+            password : values.password 
+          })
+          .then(function(resp){
+            if(resp.status(200) ){
+              //success
+               /*just random file to test*/
+              console.log(resp)
+              history.push( '/user-panel', config );
+            }
+          })
+          .catch(function(err){
+            //negative
+            console.log(err)
+            history.push( '/user-panel', config );
+          });
+
+
+          // /*just random file to test*/
+          //history.push( '/user-panel', config );
       } 
     }, [errors]) //always return errors, even empty
   

@@ -10,22 +10,21 @@ const LoginForm = () => {
             <div className='form-content'>
                 <form className='form' onSubmit = {handleSubmit}> 
                      <h1>
-                     Here is Login panel text
+                     Login to your panel
                      </h1>
                      <div className = 'form-inputs'>
                          <label htmlFor="username" className='form-label'>
-                             Username
+                             Email
                          </label>
-                         <input 
-                             id = 'username' // mark when focued
-                             type='text' 
-                             name='username' 
-                             className='form-input'
-                             placeholder='Enter your username'
-                             value={values.username}
-                             onChange={handleChange}
-                            />
-                             {errors.username && <p>{errors.username}</p>} {/*if any username-type errors occure*/}
+                         <input
+                        type='email' 
+                        name='email' 
+                        className='form-input'
+                        placeholder='Enter your email'
+                        value={values.email}
+                        onChange={handleChange}
+                    />
+                    {errors.email && <p>{errors.email}</p>} {/*if any email-type errors occure*/}
                      </div>
                      <div className = 'form-inputs'>
                         <label htmlFor="password" className='form-label'>

@@ -29,6 +29,26 @@ const useForm = (validate) => {
   const history = useHistory();
   useEffect(() => {
     if(Object.keys(errors).length === 0 && isSubmitting)
+      /*
+          axios.post('http://localhost:8080/api/signup',
+          {
+            username: values.username,
+            email: values.email,
+            password : values.password 
+          })
+          .then(function(resp){
+            if(resp.status(200) ){
+              //success 
+               console.log(resp)
+               history.push( '/user-panel', config );
+               setTimeout(() => {history.push("/login")}, 2000)
+             }})
+           .catch(function(err){
+             //negative
+             console.log(err)
+             history.push( '/user-panel', config );
+           });
+      */
       setTimeout(() => {history.push("/login")}, 2000)
   }, [errors])
 

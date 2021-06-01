@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router'
+import { Redirect, useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import './FormComponent.css'
 import Logo from './logoMale-4.svg'
@@ -7,10 +7,12 @@ import Logo from './logoMale-4.svg'
 function FormComponent(
     {
         name,
-        data
+        data,
     }
  ) {
    
+
+    
     return (
     <Link to ='/' style={{ textDecoration: 'none' }}>
         <div className='single-form-container'>
@@ -19,13 +21,11 @@ function FormComponent(
             </div>
             <div className='form-data-container'>
                 <div className='form-title-wrapper'>
-                    <h3>{name}</h3>
-                    
+                    <h3>{name}</h3>    
                 </div>
                 <div className='form-info-wrapper'>
                     <p>{data}</p>
-                </div>
-                
+                </div>   
              </div>
         </div>
     </Link>    
@@ -33,3 +33,4 @@ function FormComponent(
 }
 
 export default FormComponent
+

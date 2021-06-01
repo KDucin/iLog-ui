@@ -1,5 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import React, { useState, useEffect } from 'react';
+import { Redirect, useHistory } from 'react-router';
+import ReactDOM from 'react-dom'
+import axios from 'axios';
+
 const useForm = (validate) => {
 
     const history = useHistory(); // React hook 
@@ -27,14 +30,52 @@ const useForm = (validate) => {
     /* Create redirection, <Redirect/> wont work*/
     useEffect(() => {
       if(Object.keys(errors).length === 0 && isSubmitting ) {
-        /*
+       /*
           Status 200 -> JSON, pass instead {name, data} below
-        */
-       const config = {name: "json", data:"here"}
-        history.push('/user-panel', config)
+          axios.get(url + '?username=' + username)
+
+          FIX HERE -> handle axios POST !!!!!!
+        */ 
+        const config = require('./config12.json'); /*just random file to test*/
+          history.push( '/user-panel', config )
       } 
     }, [errors]) //always return errors, even empty
   
     return { handleChange, handleSubmit, values, errors };
   };
   export default useForm;
+
+  /*
+  
+  axios.post(apiBaseUrl+'createUsers', data, {headers: headers}).then(function (response) {
+
+console.log(response);
+
+if(response.data.success){
+
+localStorage.setItem("u_code", encodeURIComponent(JSON.stringify(response.data.data)));
+
+localStorage.setItem('is_done', true);
+
+window.location.href = "/";
+
+console.log("Login successfull");
+
+}else{
+
+alert(response.data.message);
+
+}
+
+}).catch(function (error) {
+
+console.log(error);
+
+});
+
+}
+
+}
+  
+  
+  */

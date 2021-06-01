@@ -14,7 +14,6 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
-    
   }
   
   .container {
@@ -25,7 +24,6 @@
     margin-left: auto;
     padding-right: 50px;
     padding-left: 50px;
-
   }
   
   .navbar-logo {
@@ -37,8 +35,7 @@
     align-items: center;
   }
   
-  .navbar-svg-logo
-  {
+  .navbar-svg-logo{
     width: 24%;
   }
   
@@ -57,8 +54,7 @@
   
   .nav-item {
     height: 80px;
-    border-bottom: 2px solid transparent;
-    
+    border-bottom: 2px solid transparent; 
   }
   
   .nav-item:hover {
@@ -98,7 +94,6 @@
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
-  
     }
   
     /* 'mobile' menu panel */

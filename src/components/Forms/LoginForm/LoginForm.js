@@ -3,14 +3,10 @@ import useForm from './useForm'
 import validate from './validateInfo' /* Validate password and login, returns errors { } */
 import './LoginForm.css'
 import { Link } from 'react-router-dom'
-// import { FcGoogle, RiFacebookCircleFill }  from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 const LoginForm = () => {
     const { handleChange, values, handleSubmit, errors} = useForm(validate);
-    const isValidated = Object.entries(errors).length !== 0;
-    const history = useHistory();
     return (
-        
             <div className='form-content'>
                 <form className='form' onSubmit = {handleSubmit}> 
                      <h1>
@@ -28,7 +24,7 @@ const LoginForm = () => {
                              placeholder='Enter your username'
                              value={values.username}
                              onChange={handleChange}
-                             />
+                            />
                              {errors.username && <p>{errors.username}</p>} {/*if any username-type errors occure*/}
                      </div>
                      <div className = 'form-inputs'>
@@ -53,8 +49,6 @@ const LoginForm = () => {
                     Don't have an account ?
                     Create one <Link to='/sign-up'>right here</Link> ! {/*  */}
                 </span>
-
-                
                 </form>
             </div>
     )

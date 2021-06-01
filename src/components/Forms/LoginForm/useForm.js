@@ -36,7 +36,7 @@ const useForm = (validate) => {
         */ 
           const config = require('./config.json');
           const config2 = require('./config12.json');
-          axios.get('http://localhost:8080/api/user',
+          axios.post('http://localhost:8080/auth/login',
           {
             email: values.email,
             password : values.password 

@@ -1,14 +1,39 @@
-[
-    {
-        "name":"its username",
-        "data":"custom data 1"
-    },
-    {
-        "name":"its username2",
-        "data":"custom data 2"
-    },
-    {
-        "name":"its username3",
-        "data":"nie ma"
-    }  
-]
+{
+    "formName": "moja ankieta",
+    "questions": [
+      {
+        "name": "Najlepszym polskim sportowcem jest ...",
+        "type": "SINGLE_CHOICE",
+        "answers": [
+          {
+            "name": "Rober Lewandowski"
+          },
+          {
+            "name": "Kamil Stoch"
+          },
+          {
+            "name": "Iga Świątek"
+          }
+        ]
+      },
+      {
+        "name": "Którym językiem obcym najlepiej się posługujesz",
+        "type": "SINGLE_CHOICE",
+        "answers": [
+          {
+            "name": "Angielskim"
+          },
+          {
+            "name": "Niemieckim"
+          },
+          {
+            "name": "Francuskim"
+          },
+          {
+              "name": "Włoskim"
+          }
+        ]
+      }
+    ]
+  }
+  

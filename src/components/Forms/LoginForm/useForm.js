@@ -34,8 +34,8 @@ const useForm = (validate) => {
           Status 200 -> JSON, pass instead {name, data} below
           FIX HERE -> handle axios POST !!!!!!
         */ 
-          const config = require('./config.json');
-          const config2 = require('./config12.json');
+          const token = "1234";
+        
           axios.post('http://localhost:8080/auth/login',
           {
             email: values.email,
@@ -45,19 +45,22 @@ const useForm = (validate) => {
             if(resp.status(200) ){
               //success
                /*just random file to test*/
-              console.log(resp)
-              history.push( '/user-panel', config );
+            //  console.log(resp)
+              /*axios.get()token
+              */
+             const email = values.email;
+             const password = values.password;
+              history.push('/user-panel', {token, email, password /* */} );
             }
           })
           .catch(function(err){
             //negative
-            console.log(err)
-            history.push( '/user-panel', config2 );
+           // console.log(err)
+            history.push( '/user-panel', token );
           });
-
-
           // /*just random file to test*/
-          history.push('/user-panel', config );
+          history.push('/user-panel', token );
+          //console.log(token);  
       } 
     }, [errors]) //always return errors, even empty
   

@@ -1,14 +1,79 @@
-[
+[{
+  "formName": "moja ankieta",
+  "questions": [
     {
-        "name":"its username",
-        "data":"custom data 1"
+      "name": "Najlepszym polskim sportowcem jest ...",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Rober Lewandowski"
+        },
+        {
+          "name": "Kamil Stoch"
+        },
+        {
+          "name": "Iga Świątek"
+        }
+      ]
     },
     {
-        "name":"its username2",
-        "data":"custom data 2"
+      "name": "Którym językiem obcym najlepiej się posługujesz",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Angielskim"
+        },
+        {
+          "name": "Niemieckim"
+        },
+        {
+          "name": "Francuskim"
+        },
+        {
+            "name": "Włoskim"
+        }
+      ]
+    }
+  ]
+
+},
+{
+  "formName": "moja ankieta2 ",
+  "questions": [
+    {
+      "name": "Najlepszym polskim sportowcem jest ...",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Rober Lewandowski"
+        },
+        {
+          "name": "Kamil Stoch"
+        },
+        {
+          "name": "Iga Świątek"
+        }
+      ]
     },
     {
-        "name":"its username3",
-        "data":"custom data 3"
-    }  
+      "name": "Którym językiem obcym najlepiej się posługujesz",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Angielskim"
+        },
+        {
+          "name": "Niemieckim"
+        },
+        {
+          "name": "Francuskim"
+        },
+        {
+            "name": "Włoskim"
+        }
+      ]
+    }
+  ]
+
+}
 ]

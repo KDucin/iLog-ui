@@ -6,6 +6,7 @@ import './UserNavbar.css';
 import Logo from './logo-navbar.svg';
 
 
+
 function UserNavbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -24,7 +25,7 @@ function UserNavbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}> {/* Type of menu 'full' or mobile panel*/}
               <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/login' className='nav-links' onClick={closeMobileMenu} >
                   PROFILE
                 </Link>
               </li>
@@ -36,4 +37,11 @@ function UserNavbar() {
   );
 }
 
+
+
+
 export default UserNavbar;
+
+/*
+
+*/

@@ -7,6 +7,7 @@ import Products from './components/pages/Products/Products'
 import SignUp from './components/pages/SignUp/SignUp';
 import Login from './components/pages/Login/Login'
 import UserPanel from './components/pages/UserPanel/UserPanel'
+import EditPanel from './components/pages/EditPanel/EditPanel'
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/sign-up' component={ SignUp }/>
         <Route path='/login' component={ Login }/>
         <Route path='/user-panel' component={ UserPanel }/>
+        <Route path='/edit-panel' component= { EditPanel}/>
       </Switch>  
     </Router>
   );

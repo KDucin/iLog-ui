@@ -4,22 +4,37 @@ import { useLocation } from 'react-router-dom';
 import Footer from '../../Footer/Footer';
 import UserNavbar from '../../UserNavbar/UserNavbar';
 import FormComponent from './FormComponent';
-
+import GetForms from './GetForms';
 import './UserPanel.css'
-const UserPanel = () => {
+const UserPanel = (props) => {
 
-        const location = useLocation();
+    /*
+    const [data, setData] = useState[{}]
+    axios get (header : token ) -> response => setData(response)
+
+    */
+    var data = require('../../Forms/LoginForm/config.json')
+    var token = props.location.state.token
+    var email = props.location.state.email
+    var password = props.location.state.password
+    const { errors } = GetForms(token); // errors, data
+    
+    function isEmpty(obj)
+    {
+        return !obj.keys(obj).length;
+    }
+
+    console.log(data)
         return (
             <>
-            <UserNavbar />
-                <div className='main-container'>
-                <div className='icons-wrapper'>
-                    {location.state.map(data => <FormComponent {...data}/>)}   
-                </div>
-                
-                </div>
+            <UserNavbar {...email} {...password}/>
+            {/* 
+                data from GetForms
+            */}
+            {data.map( form => <FormComponent data={form}/>)}
+            {errors}
             <Footer />
-                
+            
             </>
         
         )

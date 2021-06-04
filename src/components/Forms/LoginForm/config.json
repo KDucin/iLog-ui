@@ -35,13 +35,13 @@
       ]
     }
   ]
-
 },
+
 {
-  "formName": "moja ankieta2 ",
+  "formName": "moja ankieta222 ",
   "questions": [
     {
-      "name": "Najlepszym polskim sportowcem jest ...",
+      "name": "Najlepszym polskim sportowcem2 jest ...",
       "type": "SINGLE_CHOICE",
       "answers": [
         {
@@ -56,8 +56,8 @@
       ]
     },
     {
-      "name": "Którym językiem obcym najlepiej się posługujesz",
-      "type": "SINGLE_CHOICE",
+      "name": "Którym językiem obcym najlepiej się posługujesz ? Kilka",
+      "type": "MULTI_CHOICE",
       "answers": [
         {
           "name": "Angielskim"
@@ -72,8 +72,12 @@
             "name": "Włoskim"
         }
       ]
+    },
+    {
+      "name": "Dlaczego papiez nie moze zjesc hamburgera?",
+      "type": "WRITTEN",
+      "answers": []
     }
   ]
-
 }
 ]

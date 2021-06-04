@@ -4,6 +4,7 @@ import './CHOICE.css'
 const SINGLE_CHOICE = (answer) => {
     return(
         <>
+        {console.log("single")}
         <label class="answer-container">{answer.name}
         <span class="checkmark">
           <input type="radio" name="radio" />

@@ -1,12 +1,15 @@
 
+import './CHOICE.css'
 
-const WRITTEN = (answer) => {
+/* TO DO : css @megia -> textarea.cols rows */
+const WRITTEN = () => {
     return(
         <>
+        {console.log("written")}
         <div class="TextAnwser">
-            <h2>{answer.name}</h2>
-             <label class="textarea"></label>
-             <textarea wrap="hard" id="textanwser" name="_textanwser" rows="15" cols="180"> </textarea>
+             <label class="textarea">
+             <textarea wrap="hard" id="textanwser" name="_textanwser" rows="15" cols="80">Bo nie zyje XD</textarea>
+             </label>
         </div>
         </>
     )}

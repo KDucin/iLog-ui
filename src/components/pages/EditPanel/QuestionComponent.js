@@ -3,8 +3,14 @@ import SINGLE_CHOICE from "./SINGLE_CHOICE"
 import WRITTEN from "./WRITTEN"
 
 
-const QuestionComponent = (question) => {
+/*
+    4.06 TO DO : 
+        EventListener
+        OnChnage
+        to Components
+*/
 
+const QuestionComponent = (question) => {
     return(
             <>
             <div className='question-container'>
@@ -15,12 +21,12 @@ const QuestionComponent = (question) => {
                 <div className='question-wrapper'>
                     {
                       question.type==="WRITTEN" ?
-                      question.answers.map(obj => <WRITTEN {...obj}/>)
+                       <WRITTEN />
                       :
-                      question.type==="SINGLE_CHOICE" ?
+                      ( question.type==="SINGLE_CHOICE" ?
                       question.answers.map(obj => <SINGLE_CHOICE{...obj}/>)
                       :
-                      question.answers.map(obj => <MULTI_CHOICE{...obj}/>)
+                      question.answers.map(obj => <MULTI_CHOICE{...obj}/>) )
                     }
                 </div>
                 </form>

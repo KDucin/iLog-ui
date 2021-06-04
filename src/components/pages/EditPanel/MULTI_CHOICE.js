@@ -1,8 +1,12 @@
 
-const MULTI_CHOICE = () => {
+const MULTI_CHOICE = (answer) => {
     return(
         <>
-        
+        {console.log("multi")}
+         <label class="answer-container">{answer.name}
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
         </>
     )}
 

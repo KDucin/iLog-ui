@@ -6,8 +6,9 @@ import Services from './components/pages/Services/Services'
 import Products from './components/pages/Products/Products'
 import SignUp from './components/pages/SignUp/SignUp';
 import Login from './components/pages/Login/Login'
-import UserPanel from './components/pages/UserPanel/UserPanel'
-import EditPanel from './components/pages/EditPanel/EditPanel'
+import User from './components/pages/User/Welcome/Welcome'
+import Create from './components/pages/User/Create/Create'
+import History from './components/pages/User/History/History'
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 function App() {
@@ -15,13 +16,15 @@ function App() {
     <Router>
       <ScrollToTop />
       <Switch>
-        <Route path='/' exact component={ Home }/>
-        <Route path='/services' component={ Services }/>
-        <Route path='/products' component={ Products }/>
-        <Route path='/sign-up' component={ SignUp }/>
-        <Route path='/login' component={ Login }/>
-        <Route path='/user-panel' component={ UserPanel }/>
-        <Route path='/edit-panel' component= { EditPanel}/>
+        <Route exact path='/' exact component={ Home }/>
+        <Route exact path='/services' component={ Services }/>
+        <Route exact path='/products' component={ Products }/>
+        <Route exact path='/sign-up' component={ SignUp }/>
+        <Route exact path='/login' component={ Login }/>
+        <Route exact path='/user:userId/create' exact component={Create}/>
+        <Route exact path='/user:userId/history' exact component={History}/>
+        <Route exact path='/user:userId' exact component={User}/>
+        
       </Switch>  
     </Router>
   );

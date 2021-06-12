@@ -1,3 +1,4 @@
+import { useState } from "react"
 import MULTI_CHOICE from "./MULTI_CHOICE"
 import SINGLE_CHOICE from "./SINGLE_CHOICE"
 import WRITTEN from "./WRITTEN"
@@ -10,7 +11,15 @@ import WRITTEN from "./WRITTEN"
         to Components
 */
 
-const QuestionComponent = (question) => {
+
+const QuestionComponent = (question, {handleData}) => {
+
+    const [answ, setAnsw] = useState([]);
+    const handleAnswer=(ans)=>{
+        setAnsw(answ + ans)
+        handleData(answ);
+    }
+
     return(
             <>
             <div className='question-container'>
@@ -21,15 +30,16 @@ const QuestionComponent = (question) => {
                 <div className='question-wrapper'>
                     {
                       question.type==="WRITTEN" ?
-                       <WRITTEN />
+                       <WRITTEN handler={handleAnswer} />
                       :
                       ( question.type==="SINGLE_CHOICE" ?
-                      question.answers.map(obj => <SINGLE_CHOICE{...obj}/>)
+                      question.answers.map(obj => <SINGLE_CHOICE handler={handleAnswer} {...obj}/>)
                       :
-                      question.answers.map(obj => <MULTI_CHOICE{...obj}/>) )
+                      question.answers.map(obj => <MULTI_CHOICE handler={handleAnswer} {...obj}/>) )
                     }
                 </div>
                 </form>
+                
             </div>
             </>
     )

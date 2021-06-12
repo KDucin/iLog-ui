@@ -48,18 +48,17 @@ const useForm = (validate) => {
             //  console.log(resp)
               /*axios.get()token
               */
-             const email = values.email;
-             const password = values.password;
-              history.push('/user-panel', {token, email, password /* */} );
+
+              history.push(`/user:${token}/`, token );
             }
           })
           .catch(function(err){
             //negative
            // console.log(err)
-            history.push( '/user-panel', token );
+            history.push( `/user:${token}/`,token);
           });
           // /*just random file to test*/
-          history.push('/user-panel', token );
+          history.push(`/user:${token}/`,token);
           //console.log(token);  
       } 
     }, [errors]) //always return errors, even empty

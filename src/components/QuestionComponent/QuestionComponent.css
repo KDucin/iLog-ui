@@ -1,0 +1,149 @@
+
+  
+  form { margin: 0 auto; }
+  
+  
+  
+  .CheckboxQ{
+    font-family: arial;
+      font-size: 24px;
+      width: 25%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 0;
+      border: 2px solid #2460A7FF;
+      border-radius: 12px;
+  }
+  
+  .CheckboxA{
+    font-family: arial;
+      font-size: 16px;
+      width: 100%;
+      
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 0%;
+      border: 2px solid #85B3D1FF;
+      border-radius: 12px;
+  }
+  
+  .RadioButtonsQ{
+    font-family: arial;
+    font-size: 24px;
+      width: 25%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 35%;
+      border: 2px solid #2460A7FF;
+      border-radius: 12px;
+  }
+  .RadioButtonA{
+    font-family: arial;
+      font-size: 16px;
+      width: 25%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 35%;
+      border: 2px solid #85B3D1FF;
+      border-radius: 12px;
+  }
+  .TextAnwserQ{
+    font-family: arial;
+    font-size: 24px;
+      width: 25%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 35%;
+      border: 2px solid #2460A7FF;
+      border-radius: 12px;
+  }
+  
+  
+    .CheckboxButtonsQuestions {
+      font-family: arial;
+      display: inline-block;
+      margin: auto auto auto 25%;
+      width: 50%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+  }
+  
+    .CheckboxButtons {
+        font-family: arial;
+        display: inline-block;
+        margin: auto auto auto 25%;
+        width: 50%;
+        border: 1px solid black;
+        padding: 10px;
+        background-color:white ;
+    }
+    .RadioButtons {
+      font-family: arial;
+      display: inline-block;
+      margin: auto auto auto 25%;
+      width: 50%;
+      border: 1px solid black;
+      padding: 10px;
+      z-index: 15;
+      background-color: white;
+  }
+  .Submit{
+    font-family: arial;
+    font-size: 24px;
+      width: 10%;
+      border: 1px solid black;
+      padding: 10px;
+      background-color:white ;
+      display: inline-block;
+      margin: auto auto auto 45%;
+      border: 2px solid #2460A7FF;
+      border-radius: 12px;
+  }
+  .Submit:hover{
+    
+    background-color:#B3C7D6FF;
+  }
+  .Submit:active {
+    background-color: #B3C7D6FF;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  
+  .TextAnwser {
+    font-family: arial;
+    display: inline-block;
+    margin: auto auto auto 25%;
+    width: 50%;
+    border: 1px solid black;
+    padding: 10px; 
+    background-color: white;
+  }
+  h2{ 
+    text-align: left;
+    font-family: arial;
+  }
+  .CheckboxAnwser{
+    text-align: left;
+    font-family: arial;
+  }
+  .RadiokAnwser{
+    text-align: left;
+    font-family: arial;
+  }
+  
+    body{
+      background-color: #516199;
+    }
+    
+    label {display:block;}

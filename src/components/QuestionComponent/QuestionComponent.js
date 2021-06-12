@@ -16,9 +16,10 @@ const QuestionComponent = (param) =>
     }
     const RemoveAnswer = (index) => {
         const list = [...data.answers];
-        list.splice(index,1);
-        setData({answers: list})
-        param.onChange([data])
+        if( data.answers.length !== 0 )
+        {list.splice(index,1);
+            setData({answers: list})
+            param.onChange([data])} 
         //console.log(`usuwam: ${data.answers.map(ob => ob.name)}`)
     }
 

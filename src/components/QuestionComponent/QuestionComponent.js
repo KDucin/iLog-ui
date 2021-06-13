@@ -1,71 +1,118 @@
 import { useState } from "react"
 import './QuestionComponent.css'
-
-const QuestionComponent = (param) =>
+const QuestionComponent = (props) =>
 {
-    const[data, setData] = useState({
-        question:'',
-        type:param.type,
-        answers:[]
-    })
+    const[question, setQuestion] = useState("");
+    const[type, setType] = useState(props.type);
+    const[answers, setAnswers] = useState(
+        [ 
+            {name: ""} 
+        ]);
 
-    const AddAnswer = () =>{
-        setData({answers: [...data.answers, {name: "sss"}] } ) 
-        //console.log(`dodaje: ${data.answers.map(ob => ob.name)}`)
-        param.onChange([data])
+    const AddAnswer = () => {
+        const update=[...answers, {name:""}];
+        setAnswers(update)  
+        sendData()
     }
-    const RemoveAnswer = (index) => {
-        const list = [...data.answers];
-        if( data.answers.length !== 0 )
-        {list.splice(index,1);
-            setData({answers: list})
-            param.onChange([data])} 
-        //console.log(`usuwam: ${data.answers.map(ob => ob.name)}`)
+    const RemoveAnswer = index => {
+        const temp = [...answers];
+        temp.splice(index,1);
+        setAnswers(temp);
+        sendData()
+    }
+    function QuestionChange(e){
+        setQuestion(String(e.target.value))
+        sendData()
+        
+    }
+    const InputChange=(e,i) =>
+    {
+        var data = Object.assign([], answers)
+        data[i].name = e.target.value === "" ? "" : e.target.value;
+        setAnswers(data);
+        sendData()
     }
 
-    const handleChange = (e,index) =>{
-       const {name,value} = e.target;
-       const list = [...data.answers]
-       list[index][name]=value;
-       setData({answers: list})
+    function sendData(){
+        props.update( props.index,{question:question,type:type, answers:answers} )
     }
-
-
 
    return(
       <>
       <div className='question-container'>
-
-        <input type="text" class="CheckboxQ" id="CheckboxQuestion" name="CheckboxQuestion" value="CheckboxQuestion">
-        </input>
-        
-        {data.answers.map( obj => 
-        
-        obj.type==="WRITTEN" ?
-        <>
-        <label class="CheckboxAnwser">
-        <textarea rows="5" cols="60" name="text" placeholder="Answer here"></textarea>
-        </label>
-        </>  
-        :
-        obj.type==="SINGLE_CHOICE" ?
-        <>
-        <label class="RadiokAnwser">
-        <input type="text" class="RadioButtonA" id="RadioButtonAnwser" name="RadioButtonAnwser" value="RadioButtonAnwser"/> <br> </br>
-        </label>
-        </>
-        :
-        <>
-        <label class="CheckboxAnwser">
-        <input type="text" class="CheckboxA" id="CheckboxAnwser" name="CheckboxAnwser" value="CheckboxAnwser"/><br/><br/>
-        </label>
-        </>
-        )}
-        <br />
-        {(data.type!=="WRITTEN") ?  <button onClick={AddAnswer}>Add</button> : null}
-        {(data.type!=="WRITTEN") ? <button onClick={RemoveAnswer}>Remove</button> : null}
+      <input type="text" class={`css-input ${props.type}`} placeholder={`Question`} 
+            onChange={e => QuestionChange(e)}/>
+        {
+            answers.map((obj,idx) => 
+                type!=="WRITTEN" ?
+                <>
+                    <input name="name" type="text" placeholder={`ans ${idx}`} 
+                            onChange={e => InputChange(e,idx)}/>
+                    <button 
+                        onClick={ AddAnswer }>                   
+                    Add
+                    </button>
+                    {
+                    answers.indexOf(obj)!==0 ? 
+                    <button 
+                        onClick={ () => RemoveAnswer(idx)}>
+                    Remove
+                    </button>  : null
+                    }
+                    <br/>
+                </>
+                :
+                <textarea readonly cols="30" value={props.type}/>
+                )
+        }
       </div>
-        {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        /*
+<div className='question-container'>
+        <input type="text" class={`css-input ${props.type}`} placeholder={`Question :${question}`} 
+            onChange={e => QuestionChange(e)}
+        />
+        <div>
+            {answers.map(obj => 
+            type!=="WRITTEN" ?
+            <>
+                <input name="name" type="text" placeholder={`ans ${obj.name}`} 
+                        onChange={e => InputChange(e,answers.indexOf(obj))}/>
+                <button 
+                    onClick={ () => setAnswers({answers:[...answers, 
+                                        {name:`click from ${answers.indexOf(obj)}`}
+                                    ]})}>
+                Add
+                </button>
+                {
+                answers.indexOf(obj)!==0 ? 
+                    <button onClick={() => RemoveAnswer(answers.indexOf(obj))}>Remove</button>  : null
+                }
+                <br/>
+            </>
+            :
+            <textarea readonly cols="30" value={props.type}/>
+            )}
+        </div>
+                
+    </div>
+
+        */
+    }
+     
       </>
    )
 

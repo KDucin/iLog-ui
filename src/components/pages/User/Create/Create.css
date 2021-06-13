@@ -51,6 +51,12 @@ border-bottom-right-radius: 15px;
     border : 2px solid blue;
     margin: 2% 15%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.wrapper-delete{
+    flex-direction: row;  
+    display: flex; 
 }
 
 .controller-icon:hover{

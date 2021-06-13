@@ -14,41 +14,45 @@ const Create = () => {
         }
     );
 
-    const handleNameChange = e =>{
-        data.formName = e.target.value;
-    }
+    const [formName, setFormName] = useState("")
+    const [questions, setQuestions] = useState([])
 
     const AddWritten = () =>{
-        setData({questions: [...data.questions,
+        setQuestions([...questions,
             {question:'',
             type:'WRITTEN',
-            answers:[]}]})
+            answers:[] } ])
         }
     
     const AddSigle = () =>{
-        setData({questions: [...data.questions,
+        setQuestions([...questions,
             {question:'',
             type:'SINGLE_CHOICE',
-            answers:[]}]})
+            answers:[] } ])
     }
     const AddMulti = () =>{
-        setData({questions: [...data.questions,
+        setQuestions([...questions, 
             {
             question:'',
             type:'MULTI_CHOICE',
             answers:[]}
-        ]})}
+        ])
+    }
 
     const RemoveComponent = (index) => {
-            const list = [...data.questions];
+            const list = [...questions];
             list.splice(index,1);
-            setData({questions: list})
+            setQuestions(list)
         }
 
-    function AddQuestion(childData) {
-        setData({questions: [...data.questions,{questions : [...childData]}
-            ]})
-        }
+   function handleChildChange(index,question){
+    var update = [...questions]
+    update[index] = question
+    setQuestions(update);
+    
+   }
+ 
+    
     
     return(
         <>
@@ -57,25 +61,33 @@ const Create = () => {
                 <div className='controller-wrapper'>
                     <div className='controller'>
                        <div className='controller-icons-wrapper'>
-                       <button className='controller-icon' onClick={AddWritten}>Written</button>
-                        <button className='controller-icon' onClick={AddSigle}>Single</button>
-                        <button className='controller-icon' onClick={AddMulti}>Multi</button>
+                       <button className='controller-icon' onClick={ AddWritten}>Written</button>
+                        <button className='controller-icon' onClick={  AddSigle}>Single</button>
+                        <button className='controller-icon' onClick={ AddMulti}>Multi</button>
                         </div>
                     </div>
                 </div>
                 <div className='create-wrapper'>
-                    <form onSubmit={ e=> e.preventDefault()} className='create-form'>
-                        {data.questions.map(obj => 
-                        <>
-                        <QuestionComponent type={obj.type} onChange={AddQuestion}/>
-                        <button onClick={RemoveComponent}>DELETE</button>
-                        </>
+                <input type="text" class={`css-input`} placeholder={`formName`} />
+                    <div className='create-form'>
+                        {questions.map( (obj, index) => 
+                        <div className='wrapper-delete'>
+                        <button onClick={() => RemoveComponent(index)}>DELETE</button>
+                        <QuestionComponent  
+                            index={index}
+                            type={obj.type} 
+                            update={(idx,quest) => handleChildChange(idx,quest)} 
+                        />
+                    </div>
                         )}
-                    </form>
+                    </div>
                 </div>
+               
             </div>
+            {questions.length!==0 ? <button onClick={ () => console.log(...questions)}  
+                            >Elo</button> : null}
         <Footer/>
-        {console.log(JSON.stringify(data))}
+        
         </>
     )
 }

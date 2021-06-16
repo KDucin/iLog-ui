@@ -170,10 +170,10 @@ class FillForm extends Component  {
                                         <input type="textarea"/>
                                         :
                                         question.type === "SINGLE_CHOICE" ? 
-                                        <QC qst={question.id} type ="SINGLE_CHOICE" update={(idx,quest) => this.handleChildChange(idx,quest)}  
+                                        <QC qst={question.question} type ="SINGLE_CHOICE" update={(idx,quest) => this.handleChildChange(idx,quest)}  
                                         data = {question.answers}/>
                                         :
-                                        <QC qst={question.id} type ="MULTI_CHOICE" update={(idx,quest) => this.handleChildChange(idx,quest)}  
+                                        <QC qst={question.question} type ="MULTI_CHOICE" update={(idx,quest) => this.handleChildChange(idx,quest)}  
                                         data = {question.answers}
                                         />
 

@@ -14,7 +14,7 @@ const QC = (props) =>{
     return(
         
         <div className="super-fill-wrapper">
-        <h2>{"id: " + props.qst}</h2>
+        <h2>{"Pytanie: " + props.qst}</h2>
         <div className = "fill-answer-type-wrapper">
                     
             {

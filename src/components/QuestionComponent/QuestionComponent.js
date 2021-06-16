@@ -2,6 +2,7 @@ import { useState } from "react"
 import './QuestionComponent.css'
 const QuestionComponent = (props) =>
 {
+    
     const[question, setQuestion] = useState("");
     const[type, setType] = useState(props.type);
     const[answers, setAnswers] = useState(
@@ -39,6 +40,7 @@ const QuestionComponent = (props) =>
 
    return(
       <>
+      
       <div className='question-container'>
       <input type="text" class={`css-input ${props.type}`} placeholder={`Question`} 
             onChange={e => QuestionChange(e)}/>

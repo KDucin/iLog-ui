@@ -5,19 +5,24 @@ import UserNavbar from '../UserNavbar/UserNavbar';
 import './Welcome.css'
 const Welcome = ({match, location}) => {
 /* token === location.state*/
+    const token = localStorage.getItem('token')
+    console.log(localStorage.getItem('token'))
     return(
         <>
-        <UserNavbar url={match.url}/>
+        <UserNavbar />
         <div className='user-panel-container'>
             <div className='user-panel-wrapper'>
-            <Link to={`${match.url}create`}>
+            <Link to={{pathname:`/user/create`, state: {token:token} }}>
+                
                 <div className='user-panel-c'>
-                    Create new {JSON.stringify(match, null, 2)}
+                    Create new 
                 </div>
                 </Link>
-                <Link to={`${match.url}history`}>
+                
+                <Link to={{pathname:`/user/data-view`, state: {token:token} }}>
+                
                 <div className='user-panel-c'>
-                    Check created{JSON.stringify(location, null, 2)}
+                    Data View {}
                 </div>
                 </Link>
             </div>

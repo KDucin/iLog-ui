@@ -1,26 +1,30 @@
 .css-input {
   padding: 8px;
   font-size: 20px;
-  width: 120%;
+  width: 100%;
   border-width: 1px;
   border-color: #ffffff;
-  background-color: #be9191;
+  background-color: white;
   color: #000000;
   border-style: solid;
   border-radius: 0px;
   box-shadow: -3px 3px 15px rgba(66,66,66,.39);
   text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+  font-family: arial;
+  text-align: center;
+  
 }
 .css-input:focus {
   outline:none;
 }
 .WRITTEN{
-  background-color: #d92929;
+  background-color: white;
+  
 }
 .SINGLE_CHOICE{
-  background-color: #35d929;
+  background-color:white;
 }
 
 .MULTI_CHOICE{
-  background-color: #5b29d9;
+  background-color: white;
 }

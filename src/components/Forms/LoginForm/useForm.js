@@ -34,7 +34,7 @@ const useForm = (validate) => {
           Status 200 -> JSON, pass instead {name, data} below
           FIX HERE -> handle axios POST !!!!!!
         */ 
-          const token = "1234";
+          
         
           axios.post('http://localhost:8080/auth/login',
           {
@@ -42,23 +42,25 @@ const useForm = (validate) => {
             password : values.password 
           })
           .then(function(resp){
-            if(resp.status(200) ){
+            if(resp.status >= 200 && resp.status <300 ){
+              console.log(resp)
               //success
                /*just random file to test*/
             //  console.log(resp)
               /*axios.get()token
               */
-
-              history.push(`/user:${token}/`, token );
+            localStorage.setItem('token', resp.data.accessToken )
+              
+              history.push(`/user/`, resp.data );
             }
           })
           .catch(function(err){
             //negative
-           // console.log(err)
-            history.push( `/user:${token}/`,token);
+            console.log(err)
+           // history.push( `/user:${token}/`,token);
           });
           // /*just random file to test*/
-          history.push(`/user:${token}/`,token);
+         // history.push(`/user:${token}/`,token);
           //console.log(token);  
       } 
     }, [errors]) //always return errors, even empty

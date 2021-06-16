@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
@@ -28,29 +29,28 @@ const useForm = (validate) => {
 
   const history = useHistory();
   useEffect(() => {
-    if(Object.keys(errors).length === 0 && isSubmitting)
-      /*
-          axios.post('http://localhost:8080/api/signup',
+    if(Object.keys(errors).length === 0 && isSubmitting){
+          
+          axios.post('http://localhost:8080/auth/signup',
           {
-            username: values.username,
+            name: values.username,
             email: values.email,
             password : values.password 
           })
-          .then(function(resp){
-            if(resp.status(200) ){
+          .then((resp) =>{
+            if(resp.status >= 201 ){
               //success 
-               console.log(resp)
-               history.push( '/user-panel', config );
-               setTimeout(() => {history.push("/login")}, 2000)
+               console.log("ok")
+               
              }})
            .catch(function(err){
              //negative
              console.log(err)
-             history.push( '/user-panel', config );
+            
            });
-      */
+      
       setTimeout(() => {history.push("/login")}, 2000)
-  }, [errors])
+  }}, [errors])
 
   return { handleChange, handleSubmit, values, errors };
 };

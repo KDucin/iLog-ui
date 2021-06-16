@@ -1,11 +1,12 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Footer from "../../../Footer/Footer"
 import QuestionComponent from "../../../QuestionComponent/QuestionComponent"
 import UserNavbar from "../UserNavbar/UserNavbar"
-
 import './Create.css'
-const Create = () => {
+
+const Create = (props) => {
 
     const[data, setData] = useState(
         {
@@ -16,12 +17,13 @@ const Create = () => {
 
     const [formName, setFormName] = useState("")
     const [questions, setQuestions] = useState([])
-
+    const [ids,setter] = useState( [ ] )
     const AddWritten = () =>{
         setQuestions([...questions,
             {question:'',
             type:'WRITTEN',
             answers:[] } ])
+            setData( {formName: formName , questions:[...questions] } )
         }
     
     const AddSigle = () =>{
@@ -29,6 +31,7 @@ const Create = () => {
             {question:'',
             type:'SINGLE_CHOICE',
             answers:[] } ])
+            setData( {formName: formName , questions:[...questions] } )
     }
     const AddMulti = () =>{
         setQuestions([...questions, 
@@ -37,25 +40,59 @@ const Create = () => {
             type:'MULTI_CHOICE',
             answers:[]}
         ])
+        setData( {formName: formName , questions:[...questions] } )
     }
 
     const RemoveComponent = (index) => {
             const list = [...questions];
             list.splice(index,1);
             setQuestions(list)
+            setData( {formName: formName , questions:[...questions] } )
         }
 
    function handleChildChange(index,question){
     var update = [...questions]
     update[index] = question
     setQuestions(update);
-    
+    setData( {formName: formName , questions:[...questions] } )
    }
  
+   const handleSubmit = () => {
+           const token = props.location.state.token
+           
+           
+        //Bearer by token
+        const options = {headers : {"Authorization" : `Bearer ${token}` }}
+       
+        console.log(token)
+        axios.post("http://localhost:8080/forms/create", formName, options )
+        
+        .then(respform => { 
+            const uuid = respform.data.uuid;
+            
+            questions.map(item => 
+                
+                axios.post(`http://localhost:8080/forms/${uuid}/questions`, {question: item.question, type: item.type }, options )
+                .then(
+                    respquest => //console.log("to ja " + [item.answers.map(ans => ans.name)])
+                    item.answers.map(
+                        ans => //console.log("uuid ",uuid," question ",item.question," type: ",item.type, " id",respquest.data.id, " name :", ans.name )
+                        axios.post(`http://localhost:8080/forms/${uuid}/questions/${respquest.data.id}/answers`, {text : ans.name }, options )
+                        )
+                ) 
+            ) })
+            .then(
+               () => props.history.push("/user")
+               
+            )
+            console.log("",props.location.state)
+   }
+
     
     
     return(
         <>
+        {console.log('to props',props)}
         <UserNavbar />
         <div className='create-container'>
                 <div className='controller-wrapper'>
@@ -68,24 +105,43 @@ const Create = () => {
                     </div>
                 </div>
                 <div className='create-wrapper'>
-                <input type="text" class={`css-input`} placeholder={`formName`} />
+                <input type="text" class={`css-input`} placeholder={`formName`} onChange={e => setFormName({formName: e.target.value})} />
+                
                     <div className='create-form'>
                         {questions.map( (obj, index) => 
                         <div className='wrapper-delete'>
-                        <button onClick={() => RemoveComponent(index)}>DELETE</button>
+                          
                         <QuestionComponent  
                             index={index}
                             type={obj.type} 
-                            update={(idx,quest) => handleChildChange(idx,quest)} 
+                            update={(idx,quest) => handleChildChange(idx,quest)}     
                         />
+                        <div class = "buttontest">
+                        <button onClick={() => RemoveComponent(index)}>DELETE</button>
+                        </div>
+                        
                     </div>
                         )}
                     </div>
+                    
+                    
                 </div>
-               
+                
             </div>
-            {questions.length!==0 ? <button onClick={ () => console.log(...questions)}  
-                            >Elo</button> : null}
+            
+            <div class="SubmitForm">
+                <div class="cont">
+                    
+                    
+            {questions.length!==0 ? <button onClick={ 
+                handleSubmit 
+             }
+                            >Submit</button> : null}
+                            </div>
+                            
+            </div>
+
+            
         <Footer/>
         
         </>

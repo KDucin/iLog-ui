@@ -1,0 +1,76 @@
+.fill-form-name{
+    text-align: center;
+    font-size: 32px;
+    border: 1px solid black;
+    margin: 10px auto;
+    
+}
+.fill-form-gender-pick{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid blue;
+    margin: 10px auto;
+    
+}
+.fill-form-age-pick{
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+.fill-form-questions-wrapper{
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 8px;
+}
+.question-value{
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid black;
+    margin: 10px auto;
+    border-radius: 8px;
+    width: 80%;
+}
+
+.answers-wrapper{
+    
+    border: 1px solid red;
+}
+.fill-button-wrapper{
+    text-align: center;
+}
+.fill-button-wrapper button{
+        text-align: center;
+        background-color:#44c767;
+        border-radius:28px;
+        border:1px solid #18ab29;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:17px;
+        padding:16px 31px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #2f6627;
+}
+.gender-input{
+    background-color: red;
+    height: 25px;
+    width: 25px;
+}
+.age-input{
+    background-color: red;
+    height: 25px;
+    width: 25px;
+}
+.fill-form-age-pick{
+    
+    font-size: 22px;
+}
+.age-input > label{
+    font-size: 16px;
+}

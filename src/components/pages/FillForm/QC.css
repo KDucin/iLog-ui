@@ -1,0 +1,13 @@
+.fill-answer-type-wrapper{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    border-radius: 8px;
+    width: 80%;
+}
+.super-fill-wrapper{
+    text-align: center;
+}

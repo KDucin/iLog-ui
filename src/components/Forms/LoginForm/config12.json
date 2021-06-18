@@ -1,0 +1,39 @@
+{
+    "formName": "moja ankieta",
+    "questions": [
+      {
+        "name": "Najlepszym polskim sportowcem jest ...",
+        "type": "SINGLE_CHOICE",
+        "answers": [
+          {
+            "name": "Rober Lewandowski"
+          },
+          {
+            "name": "Kamil Stoch"
+          },
+          {
+            "name": "Iga Świątek"
+          }
+        ]
+      },
+      {
+        "name": "Którym językiem obcym najlepiej się posługujesz",
+        "type": "SINGLE_CHOICE",
+        "answers": [
+          {
+            "name": "Angielskim"
+          },
+          {
+            "name": "Niemieckim"
+          },
+          {
+            "name": "Francuskim"
+          },
+          {
+              "name": "Włoskim"
+          }
+        ]
+      }
+    ]
+  }
+  

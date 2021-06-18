@@ -1,0 +1,83 @@
+[{
+  "formName": "moja ankieta",
+  "questions": [
+    {
+      "name": "Najlepszym polskim sportowcem jest ...",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Rober Lewandowski"
+        },
+        {
+          "name": "Kamil Stoch"
+        },
+        {
+          "name": "Iga Świątek"
+        }
+      ]
+    },
+    {
+      "name": "Którym językiem obcym najlepiej się posługujesz",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Angielskim"
+        },
+        {
+          "name": "Niemieckim"
+        },
+        {
+          "name": "Francuskim"
+        },
+        {
+            "name": "Włoskim"
+        }
+      ]
+    }
+  ]
+},
+
+{
+  "formName": "moja ankieta222 ",
+  "questions": [
+    {
+      "name": "Najlepszym polskim sportowcem2 jest ...",
+      "type": "SINGLE_CHOICE",
+      "answers": [
+        {
+          "name": "Rober Lewandowski"
+        },
+        {
+          "name": "Kamil Stoch"
+        },
+        {
+          "name": "Iga Świątek"
+        }
+      ]
+    },
+    {
+      "name": "Którym językiem obcym najlepiej się posługujesz ? Kilka",
+      "type": "MULTI_CHOICE",
+      "answers": [
+        {
+          "name": "Angielskim"
+        },
+        {
+          "name": "Niemieckim"
+        },
+        {
+          "name": "Francuskim"
+        },
+        {
+            "name": "Włoskim"
+        }
+      ]
+    },
+    {
+      "name": "Dlaczego papiez nie moze zjesc hamburgera?",
+      "type": "WRITTEN",
+      "answers": []
+    }
+  ]
+}
+]

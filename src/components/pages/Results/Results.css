@@ -1,0 +1,46 @@
+.result-data-container{
+min-height: 600;
+width: 100%;
+padding-top: 5% ;
+padding-bottom: 5%;
+text-align: center;
+}
+
+.result-data-container > h1{
+    text-align: center;
+}
+
+.result-data-wrapper{
+    width: 80%;
+    height: 140;
+    margin: auto;
+}
+
+.result-data-row-segment{
+    height:140px;
+    width: 100%;
+    
+    padding-bottom:1%
+}
+
+.result-data-row-wrapper{
+height: 80%;
+
+margin-bottom: 10px;
+
+}
+
+.result-data-result{
+    width: 70%;
+    height: 100%;
+}
+.male{
+    background-color: rgb(106, 106, 207);
+     width: 100%;
+}
+.female{
+    background-color: rgb(193, 103, 203);
+}
+.other{
+    background-color: rgb(96, 82, 98);
+}

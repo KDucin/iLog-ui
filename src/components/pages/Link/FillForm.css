@@ -1,0 +1,113 @@
+.fill-form-container{
+    width: 100%;
+    padding: auto;
+    padding: 5% auto;
+    background-color: #455289;
+    font-family:Courier New;
+    padding-bottom: 2%;
+}
+
+.fill-form-container *{
+    font-family:Courier New;
+    padding-bottom: 2%;
+}
+
+.fill-form-wrapper{
+    height: 100%;
+    width: 80%;
+   
+    color: white;
+    display: table;
+    margin: 0 auto;
+    padding-top:1%;
+    margin-bottom: 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.fill-form-question-wrapper{
+    border: 4px solid white;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    margin-bottom: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:64px;
+    padding-top:2%;
+    padding-bottom: 2%;
+}
+
+.fill-form-answers-wrapper{
+    border: 4px solid white;
+    
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding-top:3%;
+}
+
+.fill-form-button-wrapper{
+    
+    margin: auto;
+    height: 60px;
+    min-width: 15%;
+    max-width: 15%;
+    padding: auto 7px;
+}
+.fill-form-button{
+   
+	background-color: rgb(121, 164, 164);
+	font-family:Courier New;
+	border-radius:8px;
+	border:2px solid #3866a3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:20px;
+	font-weight:bold;
+    
+	padding:10px 28px;
+	text-decoration:none;
+	
+    width: 100%;
+}
+.fill-form-button:hover {
+    background-color: rgb(123, 152, 152);
+    transition-duration: 0.5s;
+
+}
+.fill-form-button:active {
+	position:relative;
+	top:1px;
+}
+
+.input-non-written{
+    
+}
+
+.input-non-written{
+    font-size: 32px;
+    margin:5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-wrapper{
+    border-radius: 8px;
+    font-size: 24px;
+    border: 1px solid black;
+    width: 30%;
+    margin:auto;
+    margin-top:2%;
+    background-color: rgb(121, 164, 164);
+    padding-top:2%;
+    
+}
+.button-wrapper:hover{
+    background-color: rgb(123, 152, 152);
+    transition-duration: 0.5s;
+}

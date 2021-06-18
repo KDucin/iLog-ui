@@ -1,0 +1,38 @@
+.user-panel-container{
+    margin: 0px 5%;
+    background: rgb(203,203,210);
+background: linear-gradient(90deg, rgba(203,203,210,1) 0%, rgba(120,126,126,1) 100%);
+    padding: 20px 0px;
+    align-items: center;
+    padding: 100px 100px
+}
+
+.user-panel-wrapper{
+    
+     flex-direction: row;  
+     display: flex; 
+     text-align:center;
+     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user-panel-c{
+    max-width: 400px;
+    max-height: 400px;
+    width: 400px;
+    height: 400px;
+    border: 5px solid white;
+    color:white;
+    margin: 40 auto;
+    margin-top: 50px;
+    float: left;
+    margin: 0px 50px;
+    padding-top: 25%;
+    
+
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+
+
+}
